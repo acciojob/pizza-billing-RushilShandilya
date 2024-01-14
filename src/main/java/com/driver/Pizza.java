@@ -5,7 +5,7 @@ public class Pizza {
     private Boolean isVeg;
     private String bill;
     private final int[] priceArray = new int[4];
-    private int cheeseCounter = 0 , toppingCounter = 0;
+    private int cheeseCounter = 0 , toppingCounter = 0 , takeAwayCounter = 0;
 
     public Pizza(Boolean isVeg){
         this.isVeg = isVeg;
@@ -25,28 +25,29 @@ public class Pizza {
 
     public void addExtraCheese(){
         //PriceArray[1] is ExtraCheese
-        price+=80;
+        if(cheeseCounter==0)price+=80;
         cheeseCounter++;
-        priceArray[1] = 80*cheeseCounter;
+        priceArray[1] = 80; //*cheeseCounter;
     }
 
     public void addExtraToppings(){
         //PriceArray[2] is ExtraToppings
-        toppingCounter++;
+        //toppingCounter++;
         if(isVeg){
-            price+=70;
-            priceArray[2] +=70*toppingCounter;
+            if(toppingCounter==0)price+=70;
+            priceArray[2] +=70;//*toppingCounter;
         }
         if(!isVeg){
-            price+=120;
-            priceArray[2] += 120*toppingCounter;
+            if(toppingCounter==0)price+=120;
+            priceArray[2] += 120;//*toppingCounter;
         }
     }
 
     public void addTakeaway(){
         //PriceArray[3] is Paper Bag
         priceArray[3] = 20;
-        price+=20;
+        if(takeAwayCounter==0)price+=20;
+        takeAwayCounter++;
     }
 
     public String getBill(){
