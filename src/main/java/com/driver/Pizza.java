@@ -35,11 +35,11 @@ public class Pizza {
         //toppingCounter++;
         if(isVeg){
             if(toppingCounter==0)price+=70;
-            priceArray[2] +=70;//*toppingCounter;
+            priceArray[2] =70;//*toppingCounter;
         }
         if(!isVeg){
             if(toppingCounter==0)price+=120;
-            priceArray[2] += 120;//*toppingCounter;
+            priceArray[2] = 120;//*toppingCounter;
         }
     }
 
