@@ -32,7 +32,7 @@ public class Pizza {
 
     public void addExtraToppings(){
         //PriceArray[2] is ExtraToppings
-        //toppingCounter++;
+        toppingCounter++;
         if(isVeg){
             if(toppingCounter==0)price+=70;
             priceArray[2] =70;//*toppingCounter;
